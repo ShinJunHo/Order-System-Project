@@ -9,22 +9,24 @@ import kr.co.SilSoft.obj.Order;
 import kr.co.SilSoft.obj.Product;
 import kr.co.SilSoft.obj.Warehouse;
 import kr.co.SilSoft.ui.OrderUI;
-
+/*
+ * Git ì‹œìž‘!
+ * */
 
 public class OrderSystem {
 	
-	static public ArrayList<Order> orders;//ÁÖ¹®¸ñ·Ï - ÁÖ¹®¸ñ·ÏÀ» ¿©±â¿¡ Ãß°¡
+	static public ArrayList<Order> orders;//ï¿½Ö¹ï¿½ï¿½ï¿½ï¿½ - ï¿½Ö¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½â¿¡ ï¿½ß°ï¿½
 	
 	//Data Loading...
-	static public HashMap<Integer, Product> products; //»óÇ°¸ñ·Ï
-	static public ArrayList<Warehouse> warehouses;//Ã¢°í¸ñ·Ï
+	static public HashMap<Integer, Product> products; //ï¿½ï¿½Ç°ï¿½ï¿½ï¿½
+	static public ArrayList<Warehouse> warehouses;//Ã¢ï¿½ï¿½ï¿½ï¿½
 	
 	//Data Making...
-	static public HashMap<Integer, Customer> customers; //È¸¿ø¸ñ·Ï - È¸¿øÀ» ¿©±â¿¡ Ãß°¡
+	static public HashMap<Integer, Customer> customers; //È¸ï¿½ï¿½ï¿½ï¿½ï¿½ - È¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½â¿¡ ï¿½ß°ï¿½
 	static public ArrayList<Member> members;
 	
-	public static int cid; //°í°´¹øÈ£
-	public static int orderNumber; //ÁÖ¹®¹øÈ£
+	public static int cid; //ï¿½ï¿½ï¿½ï¿½È£
+	public static int orderNumber; //ï¿½Ö¹ï¿½ï¿½ï¿½È£
 	
 	
 	public OrderSystem(){
@@ -36,16 +38,16 @@ public class OrderSystem {
 		orderNumber = 22412;
 		orders = new ArrayList<Order>();
 		
-		//È¸¿ø ¸ñ·Ï
+		//È¸ï¿½ï¿½ ï¿½ï¿½ï¿½
 		members = new ArrayList<Member>();
 		members.add(new Member(71020245, "Chang", "Korea", "+82-010-3424-2212"));
 		members.add(new Member(71050273, "David", "America", "+1-224-0632-9963"));
 		members.add(new Member(71080639, "Rionel", "France", "+33-225-354-6373"));
 		
-		//¹ßÁÖÀÚ ¸ñ·Ï
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 		customers = new HashMap<Integer, Customer>();
 
-		//»óÇ° ¼³Á¤
+		//ï¿½ï¿½Ç° ï¿½ï¿½ï¿½ï¿½
 		products = new HashMap<Integer, Product>();
 		products.put(1021, new Product(1021, "Apple", 1000));
 		products.put(1022, new Product(1022, "Orange", 1000));
@@ -58,15 +60,15 @@ public class OrderSystem {
 		products.put(1029, new Product(1029, "Melon", 1000));
 		products.put(1030, new Product(1030, "Pear", 1000));
 		
-		//Ã¢°í ¼³Á¤
+		//Ã¢ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		warehouses = new ArrayList<Warehouse>();
-		warehouses.add(new Warehouse("Á¾ÇÕ¹°·ùÃ¢°í", "¼ö¿ø", "031-3324-4251"));
-		warehouses.add(new Warehouse("¼øÈ¯¹°·ùÃ¢°í", "±¤¸í", "031-5525-4251"));
-		warehouses.add(new Warehouse("¼­ºÎ¹°·ùÃ¢°í", "ÀÎÃµ", "032-7905-4251"));
-		warehouses.add(new Warehouse("³²ºÎ¹°·ùÃ¢°í", "±¤ÁÖ", "062-9492-4251"));
+		warehouses.add(new Warehouse("ï¿½ï¿½ï¿½Õ¹ï¿½ï¿½ï¿½Ã¢ï¿½ï¿½", "ï¿½ï¿½ï¿½ï¿½", "031-3324-4251"));
+		warehouses.add(new Warehouse("ï¿½ï¿½È¯ï¿½ï¿½ï¿½ï¿½Ã¢ï¿½ï¿½", "ï¿½ï¿½ï¿½ï¿½", "031-5525-4251"));
+		warehouses.add(new Warehouse("ï¿½ï¿½ï¿½Î¹ï¿½ï¿½ï¿½Ã¢ï¿½ï¿½", "ï¿½ï¿½Ãµ", "032-7905-4251"));
+		warehouses.add(new Warehouse("ï¿½ï¿½ï¿½Î¹ï¿½ï¿½ï¿½Ã¢ï¿½ï¿½", "ï¿½ï¿½ï¿½ï¿½", "062-9492-4251"));
 		
-		//Ã¢°í¿¡ ¹°°ÇÀ» Ãß°¡
-		//Á¾ÇÕ¹°·ùÃ¢°í
+		//Ã¢ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½
+		//ï¿½ï¿½ï¿½Õ¹ï¿½ï¿½ï¿½Ã¢ï¿½ï¿½
 		warehouses.get(0).stock(products.get(1021), 563);
 		warehouses.get(0).stock(products.get(1022), 557);
 		warehouses.get(0).stock(products.get(1023), 623);
@@ -78,7 +80,7 @@ public class OrderSystem {
 		warehouses.get(0).stock(products.get(1029), 684);
 		warehouses.get(0).stock(products.get(1030), 378);
 		
-		//¼øÈ¯¹°·ùÃ¢°í
+		//ï¿½ï¿½È¯ï¿½ï¿½ï¿½ï¿½Ã¢ï¿½ï¿½
 		warehouses.get(1).stock(products.get(1021), 152);
 		warehouses.get(1).stock(products.get(1022), 226);
 		warehouses.get(1).stock(products.get(1023), 178);
@@ -88,7 +90,7 @@ public class OrderSystem {
 		warehouses.get(1).stock(products.get(1028), 176);
 		warehouses.get(1).stock(products.get(1029), 78);
 		
-		//¼­ºÎ¹°·ùÃ¢°í
+		//ï¿½ï¿½ï¿½Î¹ï¿½ï¿½ï¿½Ã¢ï¿½ï¿½
 		warehouses.get(2).stock(products.get(1021), 341);
 		warehouses.get(2).stock(products.get(1022), 273);
 		warehouses.get(2).stock(products.get(1023), 351);
@@ -100,7 +102,7 @@ public class OrderSystem {
 		warehouses.get(2).stock(products.get(1029), 167);
 		warehouses.get(2).stock(products.get(1030), 328);
 		
-		//³²ºÎ¹°·ùÃ¢°í
+		//ï¿½ï¿½ï¿½Î¹ï¿½ï¿½ï¿½Ã¢ï¿½ï¿½
 		warehouses.get(3).stock(products.get(1022), 174);
 		warehouses.get(3).stock(products.get(1023), 321);
 		warehouses.get(3).stock(products.get(1024), 121);
@@ -114,13 +116,13 @@ public class OrderSystem {
 		OrderSystem os = new OrderSystem();
 		OrderUI ui = new OrderUI();
 		
-		//»óÇ°ÀÇ ¸ñ·ÏÀ» ¾òÀ»¶§
+		//ï¿½ï¿½Ç°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		//ui.productList(os.products);
 		
-		//»óÇ°ÀÇ Àç°í¸¦ ¾òÀ»¶§
+		//ï¿½ï¿½Ç°ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		//ui.productAmount(os.products.get(1027));
 		
-		//È¸¿ø¸ñ·ÏÀ» ¾òÀ» ¶§
+		//È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 		//ui.memberList(os.members);
 		
 		System.out.println("==================================================");
@@ -133,40 +135,40 @@ public class OrderSystem {
 
 		while(true){
 			switch(ui.mainMenu()){
-				case 1: //¼öÁÖ ÀÔ·Â
+				case 1: //ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½
 					ui.registerOrder();
 					break;
-				case 2: //¼öÁÖ ¼öÁ¤
+				case 2: //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 					System.out.println();
-					System.out.println("ÇöÀç Áö¿øÇÏÁö ¾Ê´Â ±â´ÉÀÔ´Ï´Ù.");
+					System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´ï¿½ ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.");
 					break;
-				case 3: //¼öÁÖ Ãë¼Ò
+				case 3: //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 					if(orders.size()>0){
 						ui.cancelOrder();
 					}else{
 						System.out.println();
-						System.out.println("¼öÁÖ ÀÌ·ÂÀÌ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.");
+						System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½Ì·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê½ï¿½ï¿½Ï´ï¿½.");
 					}
 					break;
-				case 4: //¼öÁÖ ÀÌ·Â
+				case 4: //ï¿½ï¿½ï¿½ï¿½ ï¿½Ì·ï¿½
 					if(orders.size()>0){
 						ui.orderInfo();
 					}else{
 						System.out.println();
-						System.out.println("¼öÁÖ ÀÌ·ÂÀÌ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.");
+						System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½Ì·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê½ï¿½ï¿½Ï´ï¿½.");
 					}
 					break;
-				case 5: //»óÇ° Àç°í ÇöÈ²
+				case 5: //ï¿½ï¿½Ç° ï¿½ï¿½ï¿½ ï¿½ï¿½È²
 					ui.menuProductAmount();
 					break;
 				case 0:
 					System.out.println();
-					System.out.println("ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù.");
+					System.out.println("ï¿½ï¿½ï¿½Î±×·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
 					System.exit(0);
 					break;
 				default:
 					System.out.println();
-					System.out.println("¿Ã¹Ù¸£Áö ¾ÊÀº ÀÔ·ÂÀÔ´Ï´Ù.");
+					System.out.println("ï¿½Ã¹Ù¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ô´Ï´ï¿½.");
 					break;
 			}
 		}
